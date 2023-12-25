@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hesap Makinesi</title>
+    <style>
+        body{background-color: gray;}
+        input, button {margin: 5px;}
+        button{height: 25px}
+    </style>
+</head>
+<body>
+   
+
+    <h2>Hesap Makinesi</h2>
+
+    <input type="text" id="display" disabled>
+
+    <br>
+
+    <button onclick="tiklama('1')">1</button>
+    <button onclick="tiklama('2')">2</button>
+    <button onclick="tiklama('3')">3</button>
+    <button onclick="tiklama('+')">+</button>
+
+    <br>
+
+    <button onclick="tiklama('4')">4</button>
+    <button onclick="tiklama('5')">5</button>
+    <button onclick="tiklama('6')">6</button>
+    <button onclick="tiklama('-')">-</button>
+
+    <br>
+
+    <button onclick="tiklama('7')">7</button>
+    <button onclick="tiklama('8')">8</button>
+    <button onclick="tiklama('9')">9</button>
+    <button onclick="tiklama('*')">*</button>
+
+    <br>
+
+    <button onclick="tiklama('0')">0</button>
+    <button onclick="hesapla()">=</button>
+    <button onclick="sil()">C</button>
+    <button onclick="tiklama('/')">/</button>
+
+    <script>
+        function tiklama(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function sil() {
+            document.getElementById('display').value = '';
+        }
+
+        function hesapla() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+</html>
